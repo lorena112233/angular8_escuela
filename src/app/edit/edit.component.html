@@ -1,0 +1,48 @@
+<!-- 
+<form #formulario="ngForm" (ngSubmit)="enviarFormulario(formulario.value)"  >
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" name="nombre" ngModel class="form-control" [value]="estudiante.nombre">
+    </div>
+    <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" name="apellidos" ngModel class="form-control" [value]="estudiante.apellidos">
+    </div>
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="text" name="edad" ngModel class="form-control" [value]="estudiante.dni">
+    </div>
+    <div class="form-group">
+        <label>Dni</label>
+        <input type="text" name="dni" ngModel class="form-control" [value]="estudiante.edad">
+    </div>
+    <div class="form-group">
+        <label for="Activo"></label>
+        <input type="text" name="activo" ngModel class="form-control" [value]="estudiante.activo">
+    </div>
+    <input type="submit" value="Enviar">
+</form>
+-->
+<form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" *ngIf="estudiante">
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" formControlName="nombre" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Apellidos</label>
+            <input type="text" formControlName="apellidos" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Edad</label>
+            <input type="text" formControlName="edad" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Dni</label>
+            <input type="text" formControlName="dni" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Activo"></label>
+            <input type="text" formControlName="activo" class="form-control">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>

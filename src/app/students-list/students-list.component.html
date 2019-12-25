@@ -1,0 +1,26 @@
+<div class="table-responsive-sm">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Dni</th>
+                <th>Edad</th>
+                <th>Activo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of arrayStudents">
+                <td>{{student._id}}</td>
+                <td>{{student.nombre}}</td>
+                <td>{{student.apellidos}}</td>
+                <td>{{student.dni}}</td>
+                <td>{{student.edad}}</td>
+                <td>{{student.activo}}</td>
+                <td><button class="btn btn-small btn-danger" (click)="eliminarStudent(student)">Delete</button></td>
+                <td><button class="btn btn-small btn-info" [routerLink]="['/edit', student._id]">Editar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
